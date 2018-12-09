@@ -1,0 +1,28 @@
+Noun Project 
+Key: 202e3b46b2b6470294ebaa2e59e0b822
+Secret: 38df2f801a104991a309a7a23cd003b8
+Endpoint: GET http://api.thenounproject.com/collection/4
+
+Aeris Weather
+Key: GlvnyxkvmWH96oquK4QtV
+Secret: YhNkZjgzabuN3Ubt6ElT1HFWfVZZTOLObJDkieoo 
+
+
+
+
+App:
+
+Input City
+(Weather Vane -> Spins)
+-> Get Weather
+[-20 to -1]
+[0 to 10]
+[10 to 20]
+[20 to 30]
+
+Show Icons Depending on 
+
+[-20 to -1]
+
+
+
