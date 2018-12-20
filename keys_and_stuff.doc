@@ -24,5 +24,11 @@ Show Icons Depending on
 
 [-20 to -1]
 
+periods[#]: {
+	avgTempC
+	feelslikeC
+	weather
+}
+
 
 

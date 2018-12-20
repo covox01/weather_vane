@@ -1,0 +1,64 @@
+h1 {
+	font-family: sans-serif;
+	font-size: 100px;
+}
+
+img {
+	width: 100%;
+}
+
+.img-wrap {
+	width: 200px;
+	margin: 0 auto;
+}
+.wrap {
+	max-width: 400px;
+	width: 100%;
+	margin: auto;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.flex {
+	display: flex;
+}
+
+.flx-col {
+	display: flex;
+	flex-flow: column;
+}
+
+.flx-wrap {
+	flx-wrap: wrap;
+}
+
+.spc-evenly {
+	justify-content: space-evenly;
+}
+
+.spc-between {
+	justify-content: space-between;
+}
+
+.spc-around {
+	justify-content: space-around;
+}
+
+.just-center {
+	justify-content: center;
+}
+
+.algn-center {
+	align-items: center;
+}
+
+.display-none {
+	display: none;
+}
+
+.flx-flow {
+	display: flex;
+	flex-flow: wrap;
+}

@@ -1,6 +1,6 @@
 'use strict'
 
-const gulp= require('gulp');
+const gulp = require('gulp');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const babel = require('gulp-babel');
@@ -19,13 +19,6 @@ gulp.task('styles', () => {
 	.pipe(reload({stream: true}));
 });
 
-// gulp.task('partials', () => {
-// 	return gulp.src('./dev/styles/**/*.scss')
-// 	.pipe(sass().on('error', sass.logError))
-// 	.pipe(autoprefixer('last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
-// 	.pipe(concat('style.css'))
-// 	.pipe
-// })
 
 gulp.task('watch', () => {
 	gulp.watch('./dev/styles/**/*.scss', ['styles']);
@@ -35,9 +28,9 @@ gulp.task('watch', () => {
 
 gulp.task('scripts', () => {
 	gulp.src('./dev/scripts/main.js')
-	.pipe(babel({
-		presets: ['@babel/env']
-	}))
+	// .pipe(babel({
+	// 	presets: ['@babel/env']
+	// }))
 	.pipe(gulp.dest('public/scripts'))
 	.pipe(reload({stream: true}));
 });

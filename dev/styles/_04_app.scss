@@ -1,0 +1,122 @@
+.img-wrap {
+	width: 130px;
+	// border: 1px solid red;
+	margin-bottom: 30px;
+}
+
+.app {
+	
+	display: flex;
+	margin: 10% auto;
+	h1 {
+		margin: auto;
+		font-size: 2.5rem;
+		justify-content: space-around;
+	}
+}
+
+.city {
+	width: 290px;
+	// border: 1px solid red;
+	margin: 0 auto;
+	.city-input {
+		width: 100%;
+		text-align: center;
+		color: black;
+		padding: 10px;
+		text-transform: uppercase;
+		font-size: 10px;
+		letter-spacing: 1px;
+		}
+	.start {
+		visibility: hidden;
+		height: 10px;
+		// border: 1px solid blue;
+
+	}
+}
+
+.currentDate {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	margin: 0 auto;
+	// padding: 15px 74px 23px;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 1px;
+
+	// border:1px solid blue;
+}
+
+.cDate {
+	border-bottom: 1px solid lighten(grey, 30);
+	padding: 15px 74px 23px;
+}
+
+.cityTemp {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	font-size: 4.5rem;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	padding: 25px 25px;
+	text-transform: uppercase;
+	padding: 1rem;
+	flex-flow: wrap;
+}
+
+.cTemp {
+	// border: 1px solid red;
+	// width: 200px;
+	display: flex;
+	flex-flow: wrap;
+	font-weight: 700;
+}
+
+.cityName {
+	font-family: helvetica;
+	font-weight: bold;
+	font-size: 1.8rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	// padding: 25px 90px;
+	// border-bottom: 1px solid lighten(grey, 30);
+	text-transform: uppercase;
+	letter-spacing: 7px;
+}
+
+.cName {
+	border-bottom: 1px solid lighten(grey, 30);
+	padding: 25px 82px;
+}
+
+.dispNone {
+	display: none;
+}
+
+.sm {
+	font-size: 80px;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	// border: 1px solid red;
+}
+
+
+// .start {
+// 	background: black;
+// 	color: white;
+// 	font-family: sans-serif;
+// 	font-size: 10px;
+// 	text-transform: uppercase;
+// 	padding: 5px;
+// 	font-weight: bold;
+// 	border: none;
+// }
