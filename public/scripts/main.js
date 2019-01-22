@@ -2,37 +2,55 @@ const weatherApp = {
 	apiKey: 'kzxDckjmi2Slj9LdotDnwphuyPqsDN45'
 };
 
-//-- Extra Info Start --
+//---------- Image Flip Start ---------->
+
+weatherApp.flipImage = function(){
+	$('.init-img-state').addClass('flp-trans-state flp-img-state')
+	.on('transitionend', function(event) {
+		$('.init-img-state').removeClass('flp-trans-state flp-img-state')
+		weatherApp.flexAnimate();
+	});	
+};
+
+weatherApp.flexAnimate = function(){
+	$('.transition-cont').addClass('init-flx-trans flx-animate')
+};
+
+//---------- Get The Date ---------->
 
 weatherApp.getDate = function(){
 	getDate = new Date();
-	formatDate = getDate.getFullYear()+' . '+(getDate.getMonth()+1)+' . '+getDate.getDate();
+	formatDate = getDate.getFullYear()+' : '+(getDate.getMonth()+1)+' : '+getDate.getDate();
 	date = formatDate
 	const dateHtml =`
-		<div class="dispNone cDate"> ${date} </div>`
+		<div class="cDate"> ${date} </div>`
 		$('#currentDate').empty().append(dateHtml);
-		$('.dispNone').fadeIn(500);
-}
+}	
+
+// ---------- Info Display ---------->
 
 weatherApp.displayCityName = function(cityName) {
 	const displayName = `
-		<div class="dispNone cName"> ${cityName} </div>`;
-		$('.cityName').empty().append(displayName);
-		$('.dispNone').fadeIn(500);
+		<div class="city disp-none"> 
+			${cityName} 
+		</div>
+		`;	
+		$('.city-name').empty().append(displayName);
+		$('.city').fadeIn(500);
+		$('.divider').fadeIn(500);
+		console.log("i work");
 }
-
-// -- Extra Info End --
-
 weatherApp.displayTemp = function(data) {
 	temp = data
 	const tempHtml =`
-		<div class="dispNone cTemp"> 
+		<div class="cTemp disp-none">
 			${temp}&#176C
-		</div>
-		`;
-	$('.cityTemp').empty().append(tempHtml);
-	$('.dispNone').fadeIn(300);
+		</div>`;
+	$('.city-temp').empty().append(tempHtml);
+	$('.cTemp').fadeIn(500);
 };
+
+// ---------- Get Temperature ---------->
 
 weatherApp.getTemp = function(key){
 	$.ajax({
@@ -44,9 +62,13 @@ weatherApp.getTemp = function(key){
 			metric: true
 		}
 	}).then(function(res){
-		wholeTemp = (Math.floor(res.DailyForecasts[0].Temperature.Maximum.Value));
-		weatherApp.displayTemp(wholeTemp);
-	})
+		console.log(res);
+		setTimeout(function(){
+			wholeTemp = (Math.floor(res.DailyForecasts[0].Temperature.Maximum.Value))
+			weatherApp.displayTemp(wholeTemp)
+			weatherApp.displayCityName(cityName)
+		}, 0);
+	})		
 };
 
 weatherApp.getLocationKey = function(query){
@@ -62,10 +84,10 @@ weatherApp.getLocationKey = function(query){
 		locationKey = res[0].Key;
 		weatherApp.getTemp(locationKey);
 		cityName = res[0].EnglishName;
-		weatherApp.displayCityName(cityName);
-		weatherApp.getDate();
 	})
 };
+
+// ---------- Get User City ---------->
 
 weatherApp.getCity = function(){
 	$('form').on('submit', function (e) {
@@ -73,10 +95,16 @@ weatherApp.getCity = function(){
 		const city = $('input[type=text]').val();
 		if (city != '') {
 			$('#user-city').attr('placeholder', 'Enter City').val('');
+			weatherApp.flipImage();
+			// weatherApp.flexAnimate();
 		}
 		weatherApp.getLocationKey(city);
+		$('.disp-none').fadeOut(200);
+
 	})
 }
+
+// ---------- Init State ---------->
 
 weatherApp.init = function(){
 	weatherApp.getCity();
@@ -85,6 +113,6 @@ weatherApp.init = function(){
 
 $(document).ready(function () {
  	weatherApp.init();
-
+ 	weatherApp.getDate();
 });
 
